@@ -1,0 +1,47 @@
+.datePickerInput{
+    overflow: hidden;
+}
+
+.datePickerInput input{
+    width: 100%;
+}
+
+.date{
+    float:right;
+    margin-left: 5px;
+}
+
+.datePicker{
+    display:inline-block;
+    min-height:290px;
+}
+
+input.ng-valid.required, select.ng-valid.required, .ng-valid-message{
+    border-left: 4px solid green!important;
+}
+
+input.ng-invalid.required, select.ng-invalid.required, .ng-invalid-message{
+    /*, select.ng-valid.ng-pristine.required{*/
+    border-left: 4px solid red;
+}
+
+.errorMessage{
+    width: 200px! important;
+}
+
+input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.alert{
+    display: none;
+}
+
+.alert.alert-success, .alert.alert-danger, .alert.alert-info{
+    display: block;
+}
+
+.alert.fade{
+    display: none !important;
+}

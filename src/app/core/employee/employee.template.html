@@ -1,0 +1,55 @@
+<div class="employee-card">
+    
+    <section class="container">
+            <div id="card" (click)='toggleClass($event.currentTarget, "flipped")'>
+                <figure class="front">
+                    <div class="photo1">
+                        <img [src]="employee.photo" alt="Photo">
+                    </div>
+                    <div class="text-center title">
+                            {{employee.fullName}}
+                    </div>
+                    <div class="text-center">
+                            {{employee.jobTitle}}
+                    </div>
+                </figure>
+                <figure class="back">
+                    <div>
+                        <span class="title">Name:</span>
+                        <span>{{employee.fullName}}</span>
+                    </div>
+
+                    <div>
+                        <span class="title">Job Title:</span>
+                        <span>{{employee.jobTitle}}</span>
+                    </div>
+
+                    <div>
+                        <span class="title">Project:</span>
+                        <span>{{employee.projectName}}</span>
+                    </div>
+
+                    <div>
+                        <span class="title">Department:</span>
+                        <span>{{employee.departmentName}}</span>
+                    </div>
+
+                    <div>
+                        <span class="title">Technology:</span>
+                        <span>{{employee.technology}}</span>
+                    </div>
+
+                    <div>
+                        <span class="title">Company E-mail address:</span>
+                        <span class="bread-word">{{employee.companyEmail}}</span>
+                    </div>
+
+                    <div class="button center">
+                        <button (click)="showDetails()" md-raised-button class="greenButton">Details</button>
+                    </div>
+                </figure>
+            </div>
+        </section>
+</div>
+
+<employee-details [employee]="employee"></employee-details>

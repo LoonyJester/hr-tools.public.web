@@ -1,0 +1,204 @@
+.employee-card{
+    /*clear: both;*/
+    /*width: 80%;*/
+    /*margin-bottom: 15px;
+    background-color: lightgreen;
+    border: 2px solid black;
+    width: 40%;*/
+}
+/*
+.photo{
+    float: left;
+    padding-bottom: 15px;
+    width: 100px;
+    height: 150px;
+}
+
+.photo img{    
+    min-width: 100%;
+    height: 150px;
+}
+
+.right-block{
+    overflow: hidden;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 150px;
+    vertical-align: middle;
+    
+}
+
+.lable{
+  height: 30px;
+  width: 20%;
+  float: left;
+  text-align: right;
+  font-weight: bold;
+  min-width: 20%;
+}
+.value{
+  height: 30px;
+  /*width: 50%;*/
+/*}*/
+
+
+
+
+
+
+
+
+/* Styles go here */
+/*
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 450px;
+  height: 281px;
+  z-index: 1;
+  
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container { 
+  width: 250px;
+  height: 310px;
+  position: relative;
+  perspective: 800px;
+
+  float: left;
+
+  margin: 10px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#card .front {
+  background: rgba(230, 255, 230, 0.8);
+}
+#card .back {
+  background: rgba(230, 255, 230, 0.8);
+  transform: rotateY( 180deg );
+  padding: 15px 15px 15px 15px;
+}
+
+#card .back div{
+  margin-bottom: 5px;
+}
+
+#card.flipped {
+  transform: rotateY( 180deg );
+}
+
+
+.photo1{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 135px;
+    display: block;
+    margin-left: 10%;
+}
+
+.photo1 img{    
+    min-width: 100%;
+    height: 202px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.title{
+  font-weight: bold;
+}
+
+
+/*greent button*/
+
+.button{
+  width: 100px;
+  height: 30px;
+  margin-left: -50px;
+}
+
+.button.center{
+  text-align: center;
+  bottom: 10px;    
+  position: absolute;
+  left: 50%; 
+}
+
+.button.center button{
+  height: 100%;
+      line-height: 1;
+}
+
+.greenButton{
+  background-color: rgb(143, 214, 143);
+}
+
+/*end -greent button*/
+
+.bread-word{
+  word-wrap: break-word;
+}

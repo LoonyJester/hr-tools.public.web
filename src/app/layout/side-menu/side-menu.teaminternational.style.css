@@ -1,0 +1,8 @@
+.sidebar ul.nav li.nav-item a.nav-link:hover{
+  color:#06a73a !important;
+}
+
+.sidebar ul.nav li.nav-item a.nav-link.active{
+    /*background-color: #fff;*/
+       color:#06a73a !important;
+}

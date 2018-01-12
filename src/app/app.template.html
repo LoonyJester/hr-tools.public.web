@@ -1,0 +1,34 @@
+<div class="app navbar-fixed fixed-nav" [ngClass]="{'sidebar-nav': isHorizontalMenuOpened, 'aside-menu-open': isAsideMenuOpened}">
+    <div class="wrapper" *ngIf="!showLoginPage">
+        
+        <top-nav-menu [isCoreModuleActive]="isCoreModuleActive" (menuToggled)="onMenuToggled($event)" (asideMenuToggled)="onAsideMenuToggled($event)"
+            (loginClicked)="onLoginClicked($event)"></top-nav-menu>
+
+        <side-menu [isOpened]="isHorizontalMenuOpened"></side-menu>
+
+        <main class="main">
+            
+            <!--<page-header></page-header>
+
+        <breadcrumb></breadcrumb>-->
+
+            <div class="content">
+                <div role="main" class="page">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </main>
+
+        <quick-actions-menu></quick-actions-menu>
+
+        <div class="footer">
+            <custom-footer></custom-footer>
+        </div>
+    </div>
+
+    <div *ngIf="showLoginPage">
+        <login></login>
+
+        <router-outlet name="login"></router-outlet>
+    </div>
+</div>

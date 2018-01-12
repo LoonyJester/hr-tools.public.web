@@ -1,0 +1,14 @@
+footer.footer{
+  background-color: #e6e6e6;
+  border-top:1px solid #cfcfcf;
+}
+
+body:not(.top-nav) .sidebar .sidebar-footer ul.terms li a {
+          color: #818a91;
+          text-decoration: none; }
+          body:not(.top-nav) .sidebar .sidebar-footer ul.terms li a:hover {
+            color: #000000; }
+
+.pull-right a:hover{
+    color: #000000 !important;
+  }

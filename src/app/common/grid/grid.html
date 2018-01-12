@@ -1,0 +1,60 @@
+<div class="table-responsive">
+    <!--<ng-table [config]="{className: ['table-striped']}"
+          (tableChanged)="onChangeTable()"
+          (cellClicked)="onCellClicked($event)"
+          [rows]="rows" [columns]="columns">
+    </ng-table>-->
+    <table class="table table-striped">
+        <thead>
+            <tr role="row">
+                <th *ngFor="let column of columns" ngClass="{{column.className || ''}}" (click)="onChangeTable($event, column)">
+                    {{column.title}}
+                    <i *ngIf="column.sort" class="pull-right fa" [ngClass]="{'fa-chevron-down': column.sort === 'desc', 'fa-chevron-up': column.sort === 'asc'}"></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows" ngClass="{{row.className || ''}}">
+                <template [ngIf]="!row.warningTooltip">
+                    <td (click)="onCellClicked(row, column.name)" *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
+                    <td></td>
+                </template>
+
+                <template [ngIf]="row.warningTooltip">
+                    <td (click)="onCellClicked(row, column.name)" *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
+                    <td tooltip="{{row.warningTooltip}}"  placement="left" style="padding-right: 15px;" container="body">
+                        <i class="fa fa-lg fa-exclamation-triangle orange"  aria-hidden="true"></i>
+                    </td>
+                </template>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div>
+        <pagination style="margin-top: 10px;" [totalItems]="settings.totalCount" [itemsPerPage]="settings.itemsPerPage" [(ngModel)]="settings.currentPage"
+            (pageChanged)="onChangeTable($event)"></pagination>
+    </div>
+</div>
+
+<!--
+<table class="table dataTable" ngClass="{{config.className || ''}}" role="grid" style="width: 100%;">
+    <thead>
+        <tr role="row">
+            <th *ngFor="let column of columns" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)" ngClass="{{column.className || ''}}">
+            {{column.title}}
+                <i *ngIf="config && column.sort" class="pull-right fa" [ngClass]="{'fa-chevron-down': column.sort === 'desc', 'fa-chevron-up': column.sort === 'asc'}"></i>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="showFilterRow">
+            <td *ngFor="let column of columns">
+                <input *ngIf="column.filtering" placeholder="{{column.filtering.placeholder}}" [ngTableFiltering]="column.filtering" class="form-control"
+                    style="width: auto;" (tableChanged)="onChangeTable(config)"> </td>
+        </tr>
+        <tr *ngFor="let row of rows">
+            <td (click)="cellClick(row, column.name)" *ngFor="let column of columns" [innerHtml]="sanitize(getData(row, column.name))"></td>
+        </tr>
+    </tbody>
+</table>-->

@@ -1,0 +1,95 @@
+ /*.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto; }
+
+  .pull-right {
+  float: right; }
+
+  .footer {
+  transition-duration: 0.25s, 0.25s, 0.25s, 0.25s, 0.25s, 0.25s;
+  transition-property: padding-left, padding-right, margin-left, margin-right, left, right; }*/
+
+  .footer {
+  flex: 0 0 auto;
+}
+
+
+
+/*new changes*/
+.footer{
+  position:absolute;
+  bottom:0;
+  z-index:1030;
+}
+
+
+
+    .sidebar-footer ul.sidebar-footer-menu {
+      position: relative;
+      display: table;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      table-layout: fixed; }
+      .sidebar-footer ul.sidebar-footer-menu li {
+        display: table-cell;
+        text-align: center; }
+       .sidebar-footer ul.sidebar-footer-menu li button {
+          background: none;
+          border: 0; }
+          .sidebar-footer ul.sidebar-footer-menu li button i {
+            display: block;
+            font-size: 20px; }
+         .sidebar-footer ul.sidebar-footer-menu li button span {
+            font-size: 10px; }
+      .sidebar-footer ul.sidebar-footer-menu .dropdown-menu {
+        position: fixed;
+        bottom: 85px;
+        left: 5px;
+        width: 190px;
+        overflow: hidden;
+        /*background: #fff;*/
+        border: 0; }
+        .sidebar-footer ul.sidebar-footer-menu .dropdown-menu div .title {
+          font-size: 12px; }
+         .sidebar-footer ul.sidebar-footer-menu .dropdown-menu div .title span {
+            float: right;
+            font-weight: 600; }
+     .sidebar-footer ul.sidebar-footer-menu .btn-group .dropdown-toggle:active:before, body:not(.top-nav) .sidebar .sidebar-footer ul.sidebar-footer-menu .fc-button-group .dropdown-toggle:active:before,
+     .sidebar-footer ul.sidebar-footer-menu .btn-group.open .dropdown-toggle:before,
+     .sidebar-footer ul.sidebar-footer-menu .open.fc-button-group .dropdown-toggle:before {
+        position: absolute;
+        top: -8px;
+        margin-left: -8px;
+        content: '';
+        border-top: 8px solid #fff;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent; }
+   .sidebar-footer ul.terms {
+      position: relative;
+      display: table;
+      width: 100%;
+      padding: 0;
+      line-height: 16px;
+      table-layout: fixed;
+      background: transparent }
+      .sidebar-footer ul.terms li {
+        display: table-cell;
+        padding: 0;
+        font-size: 12px;
+        text-align: center; }
+        .sidebar-footer ul.terms li a {
+          color: #818a91;
+          text-decoration: none; }
+          .sidebar-footer ul.terms li a:hover {
+            color: #000000; }
+
+.sidebar-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width:200px;
+  background: transparent;
+  }
+
+  

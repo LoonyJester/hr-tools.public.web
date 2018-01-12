@@ -1,0 +1,15 @@
+.aside-menu {
+  transition-duration: 0.25s, 0.25s;
+  transition-property: left, right; }
+
+/*.aside-menu-open .main {
+  padding-right: 250px; }
+.aside-menu-open .aside-menu {
+  right: 0; }
+.aside-menu-open .footer {
+  right: 250px; }
+.aside-menu-open.aside-menu-off-canvas .main {
+  right: 0;
+  padding-right: 0; }*/
+
+  /*TODO: remove styles from index css when classes will be added dynamically*/

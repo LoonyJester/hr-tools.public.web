@@ -1,0 +1,56 @@
+
+<div class="sidebar">
+           <div class="padding-topmenu"></div>
+            <div class="sidebar-header">
+                <img src="{{LogoRelativeUrl}}" class="img-avatar" alt="Avatar">                
+            </div>
+            
+            <nav class="sidebar-nav">
+                
+                <ul class="nav" *ngIf="isUserLoggedIn() && isCoreModuleActive">
+                    <li class="nav-item nav-dropdown" *ngIf="isUserInRole(['Employee'])">
+                        <a class="nav-link nav-dropdown-toggle" (click)='toggleClass(HRNavItem, "hidden"); toggleClass($event.currentTarget, "opened");'><i class="icon-puzzle"></i>HR</a>
+                        <ul class="nav-dropdown-items hidden" #HRNavItem>
+                            <li class="nav-item" >
+                                <a class="nav-link" routerLink="/EmployeeList"  (click)='toggleClass($event.currentTarget, "active");'><i class="icon-puzzle"></i>Employees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/EmployeeList"><i class="icon-puzzle"></i>Appraisals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="components-cards.html"><i class="icon-puzzle"></i>Vacations</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown" *ngIf="isPAModuleActive && isUserInRole(['Manager'])">
+                        <a class="nav-link nav-dropdown-toggle" (click)='toggleClass(ProjectsNavItem, "hidden"); toggleClass($event.currentTarget, "opened");'><i class="icon-star"></i>Projects</a>
+                        <ul class="nav-dropdown-items hidden" #ProjectsNavItem>
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['./ProjectAssignment']"><i class="icon-star"></i>Project Assignment</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown" *ngIf="isATSModuleActive && isUserInRole(['Recruiter'])">
+                        <a class="nav-link nav-dropdown-toggle" (click)='toggleClass(ATSNavItem, "hidden"); toggleClass($event.currentTarget, "opened");'><i class="icon-energy"></i>ATS</a>
+                        <ul class="nav-dropdown-items hidden" #ATSNavItem>
+                            <li class="nav-item">
+                                <a class="nav-link" href="plugins-calendar.html"><i class="icon-calendar"></i>Vacations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="plugins-notifications.html"><i class="icon-info"></i>Candidates</a>
+                            </li>
+                        </ul>
+                    </li>                   
+                </ul>
+            </nav>
+           <!-- <div class="sidebar-footer">
+                <ul class="terms">
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>-->
+        </div>
+
+<link [href]="secureUrl" rel="stylesheet">

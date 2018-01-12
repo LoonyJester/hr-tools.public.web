@@ -1,0 +1,122 @@
+<page-header text="Project/Department Assignments">
+</page-header>
+
+<!--<breadcrumb></breadcrumb>-->
+
+<div *ngFor="let alert of alerts">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+</div>
+
+<div [ngClass]="{ 'spinner': isLoading }">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-sm-4 form-group">
+                <input type="text" class="form-control" placeholder="Search..." max="5" #searchInput autocomplete="off" />
+            </div>
+            
+            <div class="col-sm-2 form-group">
+                <input name="fullName"
+                    [(ngModel)]="filters.fullName"
+                    [typeahead]="fullNameAutoCompleteDataSource"
+                    (typeaheadOnSelect)="onFullNameFilterSelected($event)"
+                    [typeaheadOptionsLimit]="7"
+                    [typeaheadOptionField]="'employeeFullName'"
+                    [typeaheadMinLength]="0"
+                    placeholder="Filter by full name"
+                    class="form-control"
+                    autocomplete="off">
+            </div>
+
+            <div class="col-sm-2 form-group">
+                <input name="jobTitle"
+                    [(ngModel)]="filters.jobTitle"
+                    [typeahead]="filters.jobTitleList"
+                    [typeaheadOptionsLimit]="7"
+                    [typeaheadOptionField]="'Name'"
+                    [typeaheadMinLength]="1"
+                    placeholder="Filter by job title"
+                    class="form-control"
+                    autocomplete="off">
+            </div>
+
+            <div class="col-sm-2 form-group">
+                <input name="technology"
+                    [(ngModel)]="filters.technology"
+                    [typeahead]="filters.technologyList"
+                    [typeaheadOptionsLimit]="7"
+                    [typeaheadOptionField]="'Name'"
+                    [typeaheadMinLength]="1"
+                    placeholder="Filter by technology"
+                    class="form-control"
+                    autocomplete="off">
+            </div>
+
+            <div class="col-sm-2 form-group">
+                <input name="project"
+                    [(ngModel)]="filters.project"
+                    [typeahead]="projectAutoCompleteDataSource"
+                    (typeaheadOnSelect)="onProjectFilterSelected($event)"
+                    [typeaheadOptionsLimit]="7"
+                    [typeaheadOptionField]="'value'"
+                    [typeaheadMinLength]="0"
+                    placeholder="Filter by project"
+                    class="form-control"
+                    autocomplete="off">
+            </div>
+
+            <div class="col-sm-4 form-group">
+            </div>
+
+            <div class="col-sm-2 form-group">
+                <input name="department"
+                    [(ngModel)]="filters.department"
+                    [typeahead]="filters.departmentList"
+                    [typeaheadOptionsLimit]="7"
+                    [typeaheadOptionField]="'name'"
+                    [typeaheadMinLength]="1"
+                    placeholder="Filter by department"
+                    class="form-control"
+                    autocomplete="off">
+            </div>
+            <div>
+                <div class="col-sm-2">
+                    <input type="checkbox" name="showOldAssignments"  [(ngModel)]="filters.showOldAssignments" > Show old assignments
+                </div>
+            </div>
+
+            <div>
+                <div class="col-sm-2">
+                    <input type="checkbox" name="showOldDeactivatedProjects" [(ngModel)]="filters.showOldDeactivatedProjects" > Show old/deactivated projects
+                </div>
+            </div>
+
+            <div class="col-sm-1 form-group" style="width: 30px; margin-right: 20px;">
+                <i class="fa fa-search fa-2x" aria-hidden="true" (click)="search(searchInput.value, filters)"></i>
+            </div>
+
+            <div class="col-sm-1 form-group">
+                <button type="button" class="btn btn-sm btn-default" (click)="resetFilters()">Reset filters</button>
+            </div>
+        </div>
+    </form>
+
+
+    <div class="spinner-container1">
+        <grid  [settings]="gridSettings" [rows]="projectAssignments" [columns]="columns" (cellClicked)="onCellClicked($event);" (gridStateChanged)="onGridStateChanged($event)">
+
+        </grid>
+    </div>
+
+    <button (click)="assign()" class="btn btn-sm btn-default">Assign</button>
+
+    <delete-confirm message="" (canBeDeleted)="onDelete($event);"></delete-confirm>
+
+    <add-edit-project-assignment (projectAssignmentSaved)="onSaved($event);"></add-edit-project-assignment>
+
+</div>
+
+<style>
+    .rotating-plane-spinner {
+        background-color: rgba(127, 127, 127, 0.5);
+    }
+</style>

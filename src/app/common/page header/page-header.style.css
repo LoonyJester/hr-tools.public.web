@@ -1,0 +1,19 @@
+.page-header {
+  padding: 1rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #d1d4d7; 
+  border-left: 1px solid #d1d4d7; 
+  margin: 0 !important;
+  }
+.page-header h1 {
+margin: 0; }
+.page-header .charts .title {
+margin-top: 2px; }
+
+
+/*new changes*/
+
+.page-header{
+  border:none;
+  padding-top:2rem;
+}

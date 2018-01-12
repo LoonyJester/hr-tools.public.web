@@ -1,0 +1,14 @@
+footer.footer{
+  background-color: #ffbf80;
+  border-top:1px solid #ffb366;
+}
+
+.sidebar-footer ul.terms li a {
+          color: #990000!important;
+          text-decoration: none; }
+          .sidebar-footer ul.terms li a:hover {
+            color: #000000!important; }
+
+.pull-right a:hover{
+    color: #990000!important;
+  }

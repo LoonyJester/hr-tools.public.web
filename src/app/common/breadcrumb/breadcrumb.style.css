@@ -1,0 +1,31 @@
+.breadcrumb {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0px;
+  list-style: none;
+  background-color: #fff; }
+  .breadcrumb::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .breadcrumb > li {
+    float: left; }
+    .breadcrumb > li + li::before {
+      padding-right: .5rem;
+      padding-left: .5rem;
+      color: #818a91;
+      content: "/"; }
+  .breadcrumb > .active {
+    color: #818a91; }
+
+    .breadcrumb {
+  position: relative;
+  border-bottom: 1px solid #d1d4d7; 
+  border-left: 1px solid #d1d4d7; 
+  }
+
+  /*new changes*/
+
+  .breadcrumb{
+    border:none;
+    padding-left:0;
+  }

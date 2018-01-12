@@ -1,0 +1,36 @@
+<header class="navbar">
+    <div class="container-fluid">
+        <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
+      
+                <a class="nav-link navbar-toggler layout-toggler" (click)="toggleMenu()">&#9776;</a>
+      
+        <!--<a class="navbar-brand" href="#">ff</a>--><span class="navbar-brand">HR Tools</span>
+        <!--<ul class="nav navbar-nav hidden-md-down">
+            <!--<li class="nav-item">
+                <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
+            </li>
+            <li class="nav-item p-x-1">
+                <a class="nav-link" href="#">HR</a>
+            </li>
+            <li class="nav-item p-x-1">
+                <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item p-x-1">
+                <a class="nav-link" href="#">ATS</a>
+            </li>
+        </ul>-->
+        
+        <ul class="nav navbar-nav pull-right hidden-md-down">
+            <li class="nav-item">
+                <span *ngIf="isCoreModuleActive">
+                    <login-area (loginClicked)="onLoginClicked($event)"></login-area>
+                </span>    
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-toggler aside-toggle" (click)="toggleAsideMenu()">&#9776;</a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<link [href]="secureUrl" rel="stylesheet">

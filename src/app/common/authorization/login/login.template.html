@@ -1,0 +1,92 @@
+<!-- All the files that are required -->
+<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+
+<!-- Where all the magic happens -->
+<!-- LOGIN FORM -->
+
+<!--<div *ngIf="true" class="page-header">
+    <h1>Team International - Login</h1>
+</div>
+
+<div class="text-center" style="padding:50px 0">
+	<div class="login-form-1">
+		<form id="login-form" class="text-left">
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+						<label for="lg_username" class="sr-only">Email</label>
+                        <input type="text" [(ngModel)]="user.Email" class="form-control" id="lg_username" name="lg_username" placeholder="username">
+					</div>
+					<div class="form-group">
+						<label for="lg_password" class="sr-only">Password</label>
+						<input type="password" [(ngModel)]="user.Password" class="form-control" id="lg_password" name="lg_password" placeholder="password">
+					</div>
+					<div class="form-group login-group-checkbox">
+						<input type="checkbox" [(ngModel)]="user.UseRefreshTokens" id="lg_remember" name="lg_remember">
+						<label for="lg_remember">Remember me</label>
+					</div>
+				</div>
+                <button type="submit" class="login-button" (click)="onLoginClicked()"><i class="fa fa-chevron-right"></i></button>
+			</div>
+		</form>
+	</div>
+</div>-->
+
+<div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" [formGroup]="loginForm" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" 
+											[(ngModel)]="user.Email" class="form-control" placeholder="Enter an email"
+											[formControl]="loginForm.controls['email']" >
+
+										<div *ngIf="loginForm.controls['email'].hasError('required') && !loginForm.controls['email'].pristine" class="alert alert-danger">Email is required.</div>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" 
+											[(ngModel)]="user.Password" placeholder="Enter a password" [formControl]="loginForm.controls['password']">
+
+										<div *ngIf="loginForm.controls['password'].hasError('required') && !loginForm.controls['password'].pristine" class="alert alert-danger">Password is required.</div>
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" class="" name="remember" id="remember"
+											[(ngModel)]="user.UseRefreshTokens" [formControl]="loginForm.controls['useRefreshTokens']" >
+										<label for="remember"> Remember Me</label>
+									</div>
+									<div>
+										<div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" [disabled]="!loginForm.valid" name="login-submit" id="login-submit" 
+													tabindex="4" class="form-control btn btn-login" value="Log In"
+													(click)="onLoginClicked()" >
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
